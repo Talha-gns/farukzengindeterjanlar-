@@ -1,0 +1,48 @@
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+# Ürün verilerini bir liste içinde tutuyoruz (Veritabanı gibi simüle edildi)
+DETERJANLAR = [
+    {
+        "id": 1,
+        "isim": "Premium Ultra Temizlik",
+        "boyut": "2500ml",
+        "aciklama": "Geniş aileler için ekonomik ve güçlü formül.",
+        "resim": "deterjan_2500.png"
+    },
+    {
+        "id": 2,
+        "isim": "Hassas Renkliler",
+        "boyut": "1000ml",
+        "aciklama": "Renkleri koruyan, günlük kullanım için ideal boyut.",
+        "resim": "deterjan_1000.png"
+    },
+    {
+        "id": 3,
+        "isim": "Pratik Hijyen",
+        "boyut": "500ml",
+        "aciklama": "Seyahat boyu veya küçük evler için etkili çözüm.",
+        "resim": "deterjan_500.png"
+    }
+]
+
+@app.route('/')
+def home():
+    return render_template('index.html', urunler=DETERJANLAR)
+
+@app.route('/urunler')
+def urunler_sayfasi():
+    return render_template('index.html', urunler=DETERJANLAR, section='urunler')
+
+@app.route('/hakkinda')
+def hakkinda():
+    return render_template('index.html', section='hakkinda')
+
+@app.route('/iletisim')
+def iletisim():
+    return render_template('index.html', section='iletisim')
+
+if __name__ == '__main__':
+    # debug=True sayesinde kodda değişiklik yapınca site otomatik yenilenir
+    app.run(debug=True)
