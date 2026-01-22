@@ -9,14 +9,15 @@
 </head>
 <body>
 
-    <!-- Müzik Başlatma Ekranı (Autoplay Engelini Aşmak İçin) -->
+    <!-- Müzik Başlatma Ekranı -->
     <div id="welcome-screen">
-        <h1>Faruk Zengin Deterjanları'na Hoş Geldiniz</h1>
-        <p>Temizliğin Zirvesine Hazır mısınız?</p>
-        <button onclick="startSite()">Siteye Giriş Yap ve Müziği Aç</button>
+        <h1>Faruk Zengin Deterjanları</h1>
+        <p>Temizliğin yeni dünyasına girmeye hazır mısınız?</p>
+        <!-- Buton metni burada "Hazırım" olarak güncellendi -->
+        <button onclick="startSite()">Hazırım</button>
     </div>
 
-    <!-- Müzik Dosyası -->
+    <!-- Müzik Dosyası (Klasörünüzdeki müzik ismiyle aynı olmalı) -->
     <audio id="bg-music" loop>
         <source src="muzik.mp3" type="audio/mpeg">
     </audio>
@@ -40,16 +41,28 @@
     <section id="urunler">
         <h2>Ürünlerimiz</h2>
         <div class="product-grid">
-            <div class="product-card">Ultra Beyazlatıcı</div>
-            <div class="product-card">Bahar Tazeliği Yumuşatıcı</div>
-            <div class="product-card">Leke Canavarı Sıvı Deterjan</div>
+            <div class="product-card">
+                <i class="fas fa-soap fa-3x" style="color: #007bff; margin-bottom: 15px;"></i>
+                <h3>Ultra Beyazlatıcı</h3>
+                <p>Zorlu lekeler için kesin çözüm.</p>
+            </div>
+            <div class="product-card">
+                <i class="fas fa-wind fa-3x" style="color: #007bff; margin-bottom: 15px;"></i>
+                <h3>Bahar Tazeliği</h3>
+                <p>Günlerce süren ferah koku.</p>
+            </div>
+            <div class="product-card">
+                <i class="fas fa-tint fa-3x" style="color: #007bff; margin-bottom: 15px;"></i>
+                <h3>Leke Canavarı</h3>
+                <p>Sıvı formülüyle anında etki.</p>
+            </div>
         </div>
     </section>
 
     <section id="iletisim">
         <h2>İletişim</h2>
-        <p>E-posta: info@farukzengindeterjan.com</p>
-        <p>Telefon: +90 555 000 00 00</p>
+        <p><i class="fas fa-envelope"></i> info@farukzengindeterjan.com</p>
+        <p><i class="fas fa-phone"></i> +90 555 000 00 00</p>
     </section>
 
     <section id="sosyal">
@@ -63,7 +76,9 @@
 
     <script>
         function startSite() {
+            // Giriş ekranını gizle
             document.getElementById('welcome-screen').style.display = 'none';
+            // Müziği oynat
             var music = document.getElementById('bg-music');
             music.play();
         }
