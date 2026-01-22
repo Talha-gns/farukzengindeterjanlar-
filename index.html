@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faruk Zengin Deterjanları</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Müzik Başlatma Ekranı (Autoplay Engelini Aşmak İçin) -->
+    <div id="welcome-screen">
+        <h1>Faruk Zengin Deterjanları'na Hoş Geldiniz</h1>
+        <p>Temizliğin Zirvesine Hazır mısınız?</p>
+        <button onclick="startSite()">Siteye Giriş Yap ve Müziği Aç</button>
+    </div>
+
+    <!-- Müzik Dosyası -->
+    <audio id="bg-music" loop>
+        <source src="muzik.mp3" type="audio/mpeg">
+    </audio>
+
+    <header>
+        <nav>
+            <div class="logo">FZ Deterjanları</div>
+            <ul>
+                <li><a href="#urunler">Ürünlerimiz</a></li>
+                <li><a href="#iletisim">İletişim</a></li>
+                <li><a href="#sosyal">Sosyal Medya</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h1>Faruk Zengin Deterjanları</h1>
+        <p>Geleceğin Temizlik Teknolojisi</p>
+    </section>
+
+    <section id="urunler">
+        <h2>Ürünlerimiz</h2>
+        <div class="product-grid">
+            <div class="product-card">Ultra Beyazlatıcı</div>
+            <div class="product-card">Bahar Tazeliği Yumuşatıcı</div>
+            <div class="product-card">Leke Canavarı Sıvı Deterjan</div>
+        </div>
+    </section>
+
+    <section id="iletisim">
+        <h2>İletişim</h2>
+        <p>E-posta: info@farukzengindeterjan.com</p>
+        <p>Telefon: +90 555 000 00 00</p>
+    </section>
+
+    <section id="sosyal">
+        <h2>Sosyal Medya Adreslerimiz</h2>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+        </div>
+    </section>
+
+    <script>
+        function startSite() {
+            document.getElementById('welcome-screen').style.display = 'none';
+            var music = document.getElementById('bg-music');
+            music.play();
+        }
+    </script>
+</body>
+</html>
